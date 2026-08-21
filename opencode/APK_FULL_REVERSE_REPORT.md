@@ -119,7 +119,7 @@ data class {{Entity}}(
 
 ## 9. 任務拆分（供主要 agent 實作；arena.ai 做研究/產出）
 
-> **分工**：本節任務由**主要 agent（opencode）**實作（編譯+測試皆由 opencode 本機執行）。研究/文件/媒體等**產出類**子任務可拆給 **arena.ai**（見 `/root/通用模版/arena/TASK_SLIP.md`）；arena.ai 沙盒僅 1.9GB RAM，**不可**編譯或跑測試。
+> **分工**：本節任務由**主要 agent（opencode）**實作（編譯+測試皆由 opencode 本機執行）。**APK 逆向分析**（小中型目標）與研究/文件/媒體等**產出類**任務可拆給 **arena.ai**（見 `/root/通用模版/arena/TASK_SLIP.md`）；大型 APK 逆向與所有編譯/測試仍由 opencode 處理。
 > **執行模式（arena.ai）**：沙盒（**有網際網路**、無 git、可寫入專案目錄）。
 > **環境**：{{JDK 版本}}；Android SDK 位於 {{SDK 路徑}}（勿移動）；Gradle 依賴已快取。
 > **執行前必讀**：`scripts/check.sh`、`composeApp/build.gradle.kts`、專案工作區淨化規則。

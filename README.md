@@ -1,7 +1,7 @@
 # /root/通用模版 — 通用模版套件（雙 agent 分工，token 最大化）
 
 > **分工依據（arena.ai 實測硬體）**：1.9 GB RAM、無 swap、2 vCPU → **編譯/測試會 OOM，不能給 arena.ai**。
-> arena.ai 只做「產出類」：查資料、寫文件、生媒體、轉資料（零編譯）。
+> arena.ai 負責：**① APK 逆向分析（decompile + 功能/UI，小中型 APK）** ② 研究/文件/媒體/轉資料（零編譯）。
 > opencode（你）負責所有 Kotlin 實作、編譯、測試、APK。
 
 ## 目錄
@@ -25,6 +25,7 @@
 
 | 工作 | 交給誰 | 理由（省 token） |
 |------|--------|------------------|
+| **APK 逆向分析**（decompile/功能/UI，小中型 APK） | arena.ai | opencode 完全不用跑下載/解包/反編譯/讀證據 |
 | **網頁研究**（API 文件、規格、查證） | arena.ai | opencode 完全不用花 token 抓網/讀長文 |
 | **文件/報告/簡報/表格撰寫** | arena.ai | 純產出，opencode 零成本 |
 | **媒體**（圖示、示意圖、.pptx） | arena.ai | opencode 不做，零成本 |
@@ -32,6 +33,7 @@
 | **任務規格起草**（§9 → TASK_SLIP 草稿） | arena.ai | 省 opencode 產文 token（opencode 只審） |
 | **所有 Kotlin 實作** | opencode | 需要編譯驗證，arena 做不到 |
 | **編譯 / 測試 / 檢查 / APK** | opencode | arena 沙盒 OOM 風險高 |
+| **大型 APK 逆向**（>20MB/多 dex，OOM 風險） | opencode | arena 記憶體不足 |
 | **把 arena 產出合併進專案** | opencode | 唯一能驗證的人 |
 
 > 關鍵：arena.ai 的產出**完全不觸發 opencode 的編譯/除錯迴圈** → 100% 節省那些 token。
